@@ -90,7 +90,17 @@
    
     <div class="user-info" style="margin-top: 15%;">
         <i class="fas fa-user-circle" style="font-size: 85px;"></i>
-        <h2 class="mt-3">Gospel Chinonso</h2>
+        <h2 class="mt-3" id='username'></h2>
+        <script>
+            const firstname = localStorage.getItem('firstname').value;
+             const lastname = localStorage.getItem('lastname').value;
+
+            if (firstname && lastname ){
+              document.getElementById('username').innerHTML = firstname + " " + lastname;
+            } else{
+              window.location.href = '../signup';
+            }
+        </script>
         <pre style="color: gray;">Verified</pre>
         <button type="button" class="btn_1 btn_1 btn-danger" onclick="delete()">Delete Account</button>
     </div>
