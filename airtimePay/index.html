@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="Icon" href="./logo.jpeg">
+    <title>Flikr</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .checkout-form {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 2%;
+        }
+
+        .header {
+            color: #800080;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-submit {
+            margin-top: 20px;
+        }
+
+        .btn {
+          background: #800080;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+          background: #800080;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 150% {
+                transform: translateX(0);
+            }
+            25%, 85% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+  <div class="checkout-form">
+    <div class="header">Airtime TopUp</div>
+    <pre>Your account will be funded immediately after we have received your payment</pre>
+    <span id='alert_msg' style="color: pink;"></span>
+    <p style="color:red;" id="alert"></p><br>
+    <form id="paymentForm" class="needs-validation" novalidate autocomplete="off">
+        <div class="form-group">
+            <label for="email">Remark</label>
+            <input type="text" id="remark" value="Make a transfer to the system below" class="form-control" disabled/>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Bank</label>
+          <input type="email" id="email" value="Opay Bank" class="form-control" disabled />
+      </div>
+    <div class="form-group">
+          <label for="amount">Full Name</label>
+          <input type="email" id="email" value="Gospel Chinonso" class="form-control" disabled />
+      </div>
+        <div class="form-group">
+            <label for="amount">Currency</label>
+            <input type="tel" id="currency" value="NGN" class="form-control" disabled/>
+        </div>
+ 
+        <div class="form-group">
+          <label for="amount">Account Number</label>
+          <input type="tel" id="amount" class="form-control" value="9116101689" disabled />
+      </div>
+     <h3>User Info</h3>
+     <br>
+       <div class="form-group">
+                            <label for="network">Mobile Network</label>
+                            <input type="text" class="form-control" id="mobileNetwork" placeholder="Enter mobile network ( airtel, mtn, glo, 9mobile )">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number</label>
+                            <input type="tel" class="form-control" id="mobileNumber" placeholder="Enter mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="dataPlan">Recharge Plan</label>
+                            <input type="text" class="form-control" id="dataPlan" placeholder="Enter Airtime Plan">
+                        </div>
+
+        <div class="form-submit">
+           <a href="" style="text-align:center;color: purple;background: #f3f3f3;padding: 0.7rem;margin-top: 10px;font-weight: bold;font-size: 17px;border-radius: 5px;">I've made the payment</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+<pre style="text-align: center;color: #800080;margin-top: 10px;" onclick="window.location.href='../dashboard'">Cancel</pre>
+
+
+</body>
+
+</html>
+
