@@ -102,12 +102,13 @@
         <button type="button" class="btn_1 btn_1 btn-danger" onclick="delete()">Delete Account</button>
     </div>
 <script>
-    function delete(){
-      localStorage.removeItem('firstname');
-        localStorage.removeItem('lastname');
-        localStorage.removeItem('email');
-        localStorage.removeItem('password');
-    }
+   function delete() {
+            // Check if localStorage is supported by the browser
+            if (typeof(Storage) !== "undefined") {
+                // Remove all items from localStorage
+                localStorage.clear();
+                windows.location.href = '../login';
+            } 
 </script>
     <p><a href="../dashboard/" class="btn btn-link" style="margin-top: 10%;">Home Page</a></p>
 
