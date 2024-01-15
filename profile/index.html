@@ -104,10 +104,7 @@
 <script>
    function delete() {
             // Check if localStorage is supported by the browser
-            if (typeof(Storage) !== "undefined") {
-                // Remove all items from localStorage
-                localStorage.clear();
-                windows.location.href = '../login';
+          localStorage.clear();
             } 
 </script>
     <p><a href="../dashboard/" class="btn btn-link" style="margin-top: 10%;">Home Page</a></p>
