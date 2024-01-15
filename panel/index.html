@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fickr</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fickr - Top Up Now</title>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+     <!-- Tailwind CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+ 
+     <!-- Include Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style type="text/css">
+    body {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+        font-family: 'Verdana', sans-serif;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: auto;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background: #6610f2;
+        border-radius: 0 0 10px 10px;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .footer {
+        margin-top: auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .btn {
+        background: #6610f2;
+        color: #fff;
+        border: none;
+        color: white;
+        width: 35%;
+        border-radius: 5px;
+        font-size: 17px;
+        cursor: pointer;
+        padding: 0.9rem;
+        transition: background-color 0.3s ease-in-out;
+        margin-left: 5px;
+    }
+
+    .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .card-header {
+        border: none; /* Remove header border */
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .card-header h2 {
+        margin-bottom: 0;
+    }
+    #refreshText {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        #refreshText.refresh {
+            color: #4285f4;
+        }
+
+        #refreshIcon {
+            display: block;
+            font-size: 24px;
+            color: #4285f4;
+            transition: transform 0.3s;
+        }
+
+        #refreshIcon.refresh {
+            transform: rotate(180deg);
+        }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Tailwind CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+<!-- Custom Styles -->
+<style>
+    /* Your custom styles go here */
+
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .loader {
+        display: flex;
+        align-items: center;
+    }
+    .user-dropdown {
+        position: relative;
+        margin-right: auto;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        display: none;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 0.6rem;
+        text-align: left;
+    }
+
+    .user-dropdown:hover .dropdown-content {
+        display: block;
+        
+    }
+    </style>
+<body>
+    <div id="content" style="height: 100vh;">
+    <div class="container">
+        <div class="user-dropdown">
+            <i class="fas fa-user-circle" style="font-size: 32px;color: white;"></i>
+            <div class="dropdown-content">
+                <span onclick="logout()">LogOut</span>
+            </div>
+        </div>
+        <script>
+            function logout(){
+                const storedDataString = localStorage.getItem('status');
+                if (storedDataString === 'Logged In'){
+                    localStorage.removeItem('status');
+                    window.location.href = '../login';
+                }
+            }
+        </script>
+        <div class="profile_info">
+            <span style="color: white;font-weight: bold;">Welcome</span>
+            <p id="username" style="color: white;font-weight: bold;font-size: 16px;"></p>
+        </div>
+        
+    </div>
+
+    <div style="background:#f3f3f3;padding: 0.7rem;margin-top: 7%;">
+        <div class="balance" style="text-align: center;">
+            <pre style="font-weight: bold;font-size: 21px;" id="balance">NGN 0.00</pre>
+            <small>Feature Not Supported</small>
+        </div>
+
+
+        <div class="action" style="margin-top: 10%;">
+            <button type="button" onclick="window.location.href='../dataPay'" class="btn"><i class="fas fa-exchange-alt"></i> Recharge</button>
+            <button type="button" onclick="window.location.href='../airtimePay'" class="btn"><i class="fas fa-money-bill-wave"></i> Airtime</button>
+            <button type="button" onclick="window.location.href='../profile'" class="btn"><i class="fas fa-user-circle"></i> Profile</button>
+        </div>
+    
+      
+       
+        </div>
+         <div class="plans" style="">
+           <h2 style="color: purple;text-align: center;font-weight: bold;margin-top: 20px;">Recharge Plans</h2>
+           <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 100 Returns <b style="margin-left: auto;">200MB</b></pre>
+           </div>
+           <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 150 Returns <b style="margin-left: auto;">300MB</b></pre>
+           </div>
+           <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 200 Returns <b style="margin-left: auto;">400MB</b></pre>
+           </div>
+           <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 300 Returns <b style="margin-left: auto;">500MB</b></pre>
+           </div>
+           <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 400 Returns <b style="margin-left: auto;">2GB</b></pre>
+           </div>
+            <div class="plans" style="background: #f3f3f3;color: black;padding: 0.7rem;margin-top: 13px;">
+               <pre style="text-align: center;">NGN 600 Returns <b style="margin-left: auto;">3.5GB</b></pre>
+           </div>
+           <br>
+       </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     <!-- Font Awesome (for the refresh icon) -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+    
+     <script>
+        // Retrieve username from local storage
+        const firstname = localStorage.getItem("firstname");
+        const status = localStorage.getItem("status");
+
+        // Display the username on the page
+        if (firstname) {
+            document.getElementById("username").innerHTML = firstname;
+        } else {
+            // Redirect to signup page if username is not found
+            window.location.href = "../signup";
+        }
+        if (status === "Logged In"){
+
+        } else {
+            window.location.href = "../login";
+        }
+    </script>
+    </body>
+</html>
