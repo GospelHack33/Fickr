@@ -4,153 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fickr - Top Up Now</title>
-    <!-- Include Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-     <!-- Tailwind CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
- 
-     <!-- Include Font Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<style type="text/css">
-    body {
-        padding: 0;
-        box-sizing: border-box;
-        margin: 0;
-        overflow-y: hidden;
-        font-family: 'Verdana', sans-serif;
-    }
-
-    img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-left: auto;
-    }
-
-    .container {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        background: #6610f2;
-        border-radius: 0 0 10px 10px;
-        transition: box-shadow 0.3s ease-in-out;
-    }
-
-    .footer {
-        margin-top: auto;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .btn {
-        background: #6610f2;
-        color: #fff;
-        border: none;
-        color: white;
-        width: 30%;
-        border-radius: 5px;
-        font-size: 15px;
-        cursor: pointer;
-        padding: 0.9rem;
-        transition: background-color 0.3s ease-in-out;
-        margin-left: 5px;
-    }
-
-    .action {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 15px;
-    }
-
-    .card-header {
-        border: none; /* Remove header border */
-        text-align: center;
-        margin-top: 10%;
-    }
-
-    .card-header h2 {
-        margin-bottom: 0;
-    }
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-<!-- Tailwind CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-
-<!-- Custom Styles -->
-<style>
-    /* Your custom styles go here */
-
-    .loader-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .loader {
-        display: flex;
-        align-items: center;
-    }
-
-    .circle {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: #6610f2;
-        margin: 0 10px;
-        animation: scaleAndFade 1s infinite alternate;
-    }
-
-    @keyframes scaleAndFade {
-        0% {
-            transform: scale(1);
-            opacity: 0.8;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="Icon" href="./logo.jpeg">
+    <title>Flikr</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            
+            margin: 0;
+            padding: 0;
         }
 
-        100% {
-            transform: scale(1.2);
-            opacity: 0.4;
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
         }
-    }
-</style>
+
+        .checkout-form {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 2%;
+        }
+
+        .header {
+            color: #800080;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-submit {
+            margin-top: 20px;
+        }
+
+        .btn {
+          background: #800080;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+          background: #800080;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 150% {
+                transform: translateX(0);
+            }
+            25%, 85% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div class="loader-container">
-    <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
+
+  <div class="checkout-form">
+    <div class="header">Data TopUp</div>
+    <pre>Your account will be funded immediately after we have received your payment</pre>
+    <span id='alert_msg' style="color: pink;"></span>
+    <p style="color:red;" id="alert"></p><br>
+    <form id="paymentForm" class="needs-validation" novalidate autocomplete="off">
+        <div class="form-group">
+            <label for="email">Remark</label>
+            <input type="text" id="remark" value="Make a transfer to the system below" class="form-control" disabled/>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Bank</label>
+          <input type="email" id="email" value="Opay Bank" class="form-control" disabled />
+      </div>
+    <div class="form-group">
+          <label for="amount">Full Name</label>
+          <input type="email" id="email" value="Gospel Chinonso" class="form-control" disabled />
+      </div>
+        <div class="form-group">
+            <label for="amount">Currency</label>
+            <input type="tel" id="currency" value="NGN" class="form-control" disabled/>
+        </div>
+ 
+        <div class="form-group">
+          <label for="amount">Account Number</label>
+          <input type="tel" id="amount" class="form-control" value="9116101689" disabled />
+      </div>
+     <h3>User Info</h3>
+     <br>
+       <div class="form-group">
+                            <label for="network">Mobile Network</label>
+                            <input type="text" class="form-control" id="mobileNetwork" placeholder="Enter mobile network ( airtel, mtn, glo, 9mobile )">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number</label>
+                            <input type="tel" class="form-control" id="mobileNumber" placeholder="Enter mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="dataPlan">Recharge Plan</label>
+                            <input type="text" class="form-control" id="dataPlan" placeholder="Enter Airtime Plan">
+                        </div>
+
+        <div class="form-submit">
+           <a href="" style="text-align:center;color: purple;background: #f3f3f3;padding: 0.7rem;margin-top: 10px;font-weight: bold;font-size: 17px;border-radius: 5px;">I've made the payment</a>
+        </div>
+    </form>
 </div>
 
-<!-- Bootstrap JS (optional, if you need Bootstrap JavaScript features) -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<script>
-    // JavaScript to stop the loader and redirect after a delay
-    setTimeout(function () {
-        window.location.href = "../panel"; // Change this to the actual next page URL
-    }, 5000); // 5000 milliseconds (5 seconds) delay
-</script>
-<body>
-    
 
-   
 
-    <p style="text-align: center; color:#800080;margin-top: 80%;">Powered by VTU</p>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<pre style="text-align: center;color: #800080;margin-top: 10px;" onclick="window.location.href='../dashboard'">Cancel</pre>
+
+
 </body>
+
 </html>
+
