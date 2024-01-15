@@ -132,9 +132,13 @@
                             <label for="dataPlan">Recharge Plan</label>
                             <input type="text" class="form-control" id="dataPlan" placeholder="Enter Airtime Plan">
                         </div>
-
+<script>
+    const network = document.getElementById('mobileNetwork').value;
+    const number = document.getElementById('mobileNumber').value;
+    const plan = document.getElementById('dataPlan').value;
+</script>
         <div class="form-submit">
-           <a href="https://wa.me/09116101689?text=<script>document.getElementById('mobileNetwork').value;</script>" style="text-align:center;color: purple;background: #f3f3f3;padding: 0.7rem;margin-top: 10px;font-weight: bold;font-size: 17px;border-radius: 5px;">I've made the payment</a>
+           <a href="https://wa.me/09116101689?text="+network style="text-align:center;color: purple;background: #f3f3f3;padding: 0.7rem;margin-top: 10px;font-weight: bold;font-size: 17px;border-radius: 5px;text-decoration:none;">I've made the payment</a>
         </div>
     </form>
 </div>
