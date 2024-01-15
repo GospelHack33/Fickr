@@ -98,16 +98,17 @@
               document.getElementById('username').innerHTML = firstname + " " + lastname;
          
         </script>
-        <pre style="color: gray;">Verified</pre>
-        <button class="btn_1 btn_1 btn-danger" onclick="localStorage.clear()">Delete Account</button>
-    </div>
-<script>
+        <script>
    if (localStorage.getItem('email')){
 
    } else{
      window.location.href = '../login';
    }
 </script>
+        <pre style="color: gray;">Verified</pre>
+        <button class="btn_1 btn_1 btn-danger" onclick="localStorage.clear()">Delete Account</button>
+    </div>
+
     <p><a href="../dashboard/" class="btn btn-link" style="margin-top: 10%;">Home Page</a></p>
 
     <div class="footer">
