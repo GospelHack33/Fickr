@@ -101,7 +101,14 @@
         <pre style="color: gray;">Verified</pre>
         <button type="button" class="btn_1 btn_1 btn-danger" onclick="delete()">Delete Account</button>
     </div>
-
+<script>
+    function delete(){
+      localStorage.removeItem('firstname');
+        localStorage.removeItem('lastname');
+        localStorage.removeItem('email');
+        localStorage.removeItem('password');
+    }
+</script>
     <p><a href="../dashboard/" class="btn btn-link" style="margin-top: 10%;">Home Page</a></p>
 
     <div class="footer">
