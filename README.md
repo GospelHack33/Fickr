@@ -1,2 +1,12 @@
 # Fickr
 VTU Made Easy
+
+
+
+
+
+2a7370fe50046b01
+cc91d11dfdbad2bf
+c320703b7f3996e5
+a661f6d2f43d59c2
+c0b39893ee562844
